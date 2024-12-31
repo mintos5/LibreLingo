@@ -4,9 +4,9 @@ on:
     branches:
       - main
   workflow_dispatch:
-  schedule:
+  # schedule:
     # Runs "at minute 55 past every hour" (see https://crontab.guru)
-    - cron: '55 * * * *'
+    # - cron: '55 * * * *'
 
 jobs:
   ci:
