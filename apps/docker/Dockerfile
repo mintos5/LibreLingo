@@ -56,3 +56,10 @@ RUN cd apps/librelingo_yaml_loader && poetry install && cd ../.. && cd apps/libr
 # Prepare courses
 # RUN yarn web run installAllExternalCourses
 RUN yarn exportAllCourses
+
+# Prepare starting of the container
+COPY docker-entrypoint.sh /docker-entrypoint.sh
+RUN chmod +x /docker-entrypoint.sh
+ENV GIT_REPO=TRUE
+EXPOSE 3000
+ENTRYPOINT ["bash","-i","/docker-entrypoint.sh"]
